@@ -17,6 +17,8 @@ class Page extends Component {
 
         axios.get('pages/' + pageName + '.json').then(response => {
             this.setState({pageData: response.data})
+        }).catch(error => {
+            console.log(error);
         })
     };
 
