@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Switch, Route} from "react-router-dom";
 import Layout from "./components/Layout/Layout";
+import Page from "./containers/Page/Page";
+import EditPage from "./containers/EditPage/EditPage";
 
 
 class App extends Component {
@@ -8,7 +10,9 @@ class App extends Component {
         return (
             <Layout>
                 <Switch>
-                    <Route path="/" exact render={() => <h1>Home</h1> }/>
+                    <Route path="/" exact component={Page} />
+                    <Route path="/admin" component={EditPage}/>
+                    <Route path="/:name" component={Page}/>
                 </Switch>
             </Layout>
         );
